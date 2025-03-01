@@ -18,7 +18,7 @@ const users = [
 const hideusers = false
 try {
     users.forEach(async user => {
-      const request = fetch(`https://friends.roblox.com/v1/users/${user.id}/unfriend`, {"headers": { 
+      const request = fetch(`https://friends.roblox.com/v1/users/${user.id}/unfollow`, {"headers": { 
         "cache-control": "no-cache",
         "content-length": 2,
         "content-type": "application/json; charset=utf-8",
@@ -33,12 +33,12 @@ try {
         },"method": "POST"})
 
         if (hideusers === true) {
-            console.log(`Succefully unfriended a user! (hideusers is ON)`)
+            console.log(`Succefully unfollowed a user! (hideusers is ON)`)
         } else {
-            console.log(`Succefully unfriended ${user.displayName} (@${user.name})! (UID: ${user.id})`)
+            console.log(`Succefully unfollowed ${user.displayName} (@${user.name})! (UID: ${user.id})`)
         }
     });
-    console.log('Successfully unfriended everyone.')
+    console.log('Successfully unfollowed everyone.')
 } catch(error) {
     console.error(error)
 }
